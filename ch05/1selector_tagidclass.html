@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1selector_tagidclass</title>
+    <style>
+        /* h1 {
+            color: red;
+        }
+
+        p {
+            color: blue;
+        }
+
+        h1,
+        h2 {
+            color: green;
+        } */
+        #header {
+            width: 50%;
+            height: 60px;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+
+        #aside {
+            width: 40%;
+            height: 100px;
+            margin: 0 auto;
+            float: left;
+            background-color: rgb(236, 0, 24);
+        }
+
+        #content {
+            width: 60%;
+            height: 100px;
+            margin: 0 auto;
+            float: left;
+            background-color: rgb(0, 55, 255);
+        }
+
+        #rint {
+            color: red;
+        }
+
+
+        .rint {
+            color: rgb(255, 0, 170);
+        }
+
+        .mint {
+            color: rgb(0, 255, 195);
+        }
+
+        .itme {
+            color: rgb(47, 0, 255);
+            display: inline-block;
+            float: left;
+            background-color: rgb(187, 255, 0);
+        }
+
+        .header {
+            color: rgb(255, 0, 0);
+            display: inline-block;
+            background-color: rgb(187, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="rint"> 1. 전체 선택자</h2>
+    <h2 id="rint"> 2. 태그 선택자</h2>
+    <h2 id="rint"> 3. 아이디 선택자</h2>
+    <h2 class="rint"> 4. 클래스 선택자</h2>
+    <hr>
+    <h1 class="itme">동해물과</h1>
+    <h1 class="header">&nbsp;백두산이</h1>
+
+
+    <hr>
+
+    <ul>
+        <li class="rint">리스트 아이템 1</li>
+        <li class="mint">리스트 아이템 2</li>
+        <li class="rint">리스트 아이템 3</li>
+        <li class="mint">리스트 아이템 4</li>
+    </ul>
+
+
+
+
+
+
+
+
+    <div id="header">
+        <h1>#header 태그</h1>
+    </div>
+    <div id="aside">
+        <h1>#aside 태그</h1>
+    </div>
+    <div id="content">
+        <h1>#content 태그</h1>
+    </div>
+    <div id="footer">
+        <h1>제목</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus eligendi quisquam incidunt.
+            Porro adipisci quasi soluta, sunt deserunt illo assumenda, distinctio quam accusantium, molestias nam nisi
+            iusto
+            quibusdam aperiam.
+        </p>
+        <hr>
+        <h1>제목</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus eligendi quisquam incidunt.
+            Porro adipisci quasi soluta, sunt deserunt illo assumenda, distinctio quam accusantium, molestias nam nisi
+            iusto
+            quibusdam aperiam.
+
+        <p>Eius</p>
+    </div>
+
+</body>
+
+</html>
