@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>meow - 웹 실습 목차</title>
     <style>
         body {
@@ -39,6 +40,36 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #0066cc;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 20px 16px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            li {
+                margin: 0;
+            }
+
+            li a {
+                display: inline-flex;
+                align-items: center;
+                min-height: 44px;
+                overflow-wrap: anywhere;
+            }
         }
 
         footer {
@@ -93,7 +124,7 @@
         <li><a href="ch04/5space_block_.html">5space_block_.html</a></li>
     </ul>
 
-    <h2>Chapter 05 실습 및 과제</h2>
+    <h2>Chapter 05 실습</h2>
     <ul>
         <li><a href="ch05/1selector_tagidclass.html">1selector_tagidclass.html</a></li>
         <li><a href="ch05/9attribute_basic.html">9attribute_basic.html</a></li>
@@ -105,7 +136,6 @@
         <li><a href="ch05/16etc_structure.html">16etc_structure.html</a></li>
         <li><a href="ch05/17etc_structure_Fulse.html">17etc_structure_Fulse.html</a></li>
         <li><a href="ch05/19CSS3Unit_base.html">19CSS3Unit_base.html</a></li>
-        <li style="font-weight: bold;"><a href="ch05/ch5_blog_layout.html">ch5_blog_layout.html <strong>(과제)</strong></a></li>
     </ul>
 
     <h2>Chapter 06 실습</h2>
@@ -142,6 +172,11 @@
         <li><a href="chapter_7/7absolutePosition_align.html">7absolutePosition_align.html</a></li>
         <li><a href="chapter_7/8fixedBar.html">8fixedBar.html</a></li>
         <li><a href="chapter_7/9ellipsis.html">9ellipsis.html</a></li>
+    </ul>
+
+    <h2>과제</h2>
+    <ul>
+        <li><a href="ch05/ch5_blog_layout.html">Chapter 05 블로그 레이아웃</a></li>
     </ul>
 
     <footer>
