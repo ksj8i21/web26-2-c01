@@ -9,8 +9,12 @@
 
 <body>
     <button id="button">버튼 - </button>
-   
 
+    <script>
+        document.getElementById('button').addEventListener('click', function () {
+            this.textContent += '*';
+        });
+    </script>
 
 
     <hr>

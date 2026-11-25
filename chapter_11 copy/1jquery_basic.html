@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <style>
+        .highlight { font-weight: bold; }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#version").text("jQuery " + $.fn.jquery);
+            $("#example").css("text-decoration", "underline");
+
+            $("#attr-value").attr("value", "값");
+            $("#attr-object").attr({ value: "객체", title: "객체로 지정" });
+            $(".attr-function").attr("value", function (i) {
+                return "함수 " + (i + 1);
+            });
+
+            $("#style-value").css("font-weight", "bold");
+            $("#style-object").css({ fontWeight: "bold", textDecoration: "underline" });
+            $("#styles li").css("font-size", function (i) {
+                return 16 + i * 2 + "px";
+            });
+
+            $("#text-result").text("<b>글자</b>");
+            $("#html-result").html("<b>글자</b>");
+            $("#class-result").addClass("highlight");
+
+            let count = 0;
+            $("#event-button").on("click", function () {
+                count++;
+                $("#event-result").text(count + "번 클릭했습니다.");
+            });
+            $("#event-link").on("click", function (event) {
+                event.preventDefault();
+                $("#event-result").text("링크 이동을 막았습니다.");
+            });
+
+            $.fx.off = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            $("#effect-button").on("click", function () {
+                const expanded = $(this).attr("aria-expanded") === "true";
+                $(this).attr("aria-expanded", !expanded);
+                $("#effect-content").stop(true, true).fadeToggle();
+            });
+
+            let moved = false;
+            $("#animate-button").on("click", function () {
+                moved = !moved;
+                $("#animate-target").stop(true).animate({ marginLeft: moved ? 40 : 0 });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>jQuery 기초</h1>
+    <h2 id="setup">01 jQuery 설정</h2>
+    <p id="version"></p>
+
+    <h2>02 문서 객체 선택</h2>
+    <p id="example">선택한 문장</p>
+
+    <h2>03 문서 객체 조작</h2>
+    <h3>3.1 속성 조작</h3>
+    <input id="attr-value" size="8" aria-label="값으로 지정" readonly>
+    <input id="attr-object" size="8" aria-label="객체로 지정" readonly>
+    <input class="attr-function" size="8" aria-label="함수로 지정한 첫 번째 값" readonly>
+    <input class="attr-function" size="8" aria-label="함수로 지정한 두 번째 값" readonly>
+
+    <h3>3.2 스타일 조작</h3>
+    <ol id="styles">
+        <li id="style-value">값으로 지정</li>
+        <li id="style-object">객체로 지정</li>
+        <li>함수로 글자 크기 지정</li>
+    </ol>
+    <h3>3.3 글자 조작</h3>
+    <p>text() <span id="text-result"></span></p>
+    <p>html() <span id="html-result"></span></p>
+    <h3>3.4 클래스 조작</h3>
+    <p id="class-result">addClass() 예제</p>
+
+    <h2>04 이벤트</h2>
+    <h3>4.1 이벤트 연결</h3>
+    <button id="event-button" type="button">클릭</button>
+    <h3>4.2 이벤트 사용</h3>
+    <a id="event-link" href="#setup">위로 이동</a>
+    <p id="event-result" role="status"></p>
+
+    <h2>05 시각 효과</h2>
+    <h3>5.1 시각 효과 메서드</h3>
+    <button id="effect-button" type="button" aria-controls="effect-content" aria-expanded="true">숨기기 / 보이기</button>
+    <p id="effect-content">fadeToggle() 예제</p>
+    <h3>5.2 애니메이션 효과</h3>
+    <button id="animate-button" type="button">이동</button>
+    <p id="animate-target">animate() 예제</p>
+</body>
+
+</html>

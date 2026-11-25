@@ -7,8 +7,17 @@
     <title>DOM Basic</title>
 
 </head>
+    <script>
+        window.onload = function(){
+            let button = document.getElementById("button");
+            button.onclick = function(){
+                alert("버튼 클릭");
+            };
+        };
+    </script>
 
 <body>
+    <button id="button">버튼</button>
   
 
     <hr>
@@ -16,9 +25,9 @@
     <ol>
         <li><b>이벤트 연결</b>
             <ul>
-                <li>1인라인 이벤트 모델(문서 객체에 이벤트를 연결하는 방식) 사용하기</li>
-                <li>2script태그에 인라인 이벤트 모델 사용하기</li>
-                <li>3고전 이벤트 모델</li>
+                <li><b>1</b>1인라인 이벤트 모델(문서 객체에 이벤트를 연결하는 방식) 사용하기</li>
+                <li><b>2</b>script태그에 인라인 이벤트 모델 사용하기</li>
+                <li><b>3</b>고전 이벤트 모델</li>
             </ul>
         </li>
         <li>이벤트 사용</li>
