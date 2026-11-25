@@ -210,6 +210,7 @@
             width: 44px; height: 44px;
             z-index: 2;
         }
+        #dart svg { display: block; }
         #dart-label {
             display: none;
             position: absolute;
@@ -405,7 +406,7 @@
 
                 return places.filter(function (place) {
                     const continentOk = continent === '전체' || place.continent === continent;
-                    const keywordOk = normalize(place.city + place.country).includes(keyword);
+                    const keywordOk = normalize(place.city).includes(keyword) || normalize(place.country).includes(keyword);
                     return continentOk && keywordOk;
                 });
             }
@@ -512,7 +513,7 @@
                 const country = $('#new-country').val().trim();
                 const continent = $('#new-continent').val();
                 const reason = $('#new-reason').val().trim();
-                const namePattern = /^[가-힣a-zA-Z\s.'-]+$/;
+                const namePattern = /^[가-힣a-zA-Z][가-힣a-zA-Z\s.'-]*$/;
                 let error = '';
 
                 if (city === '' || country === '') {
@@ -613,12 +614,14 @@
                                     <use href="#land" x="360"></use>
                                 </svg>
                             </div>
-                            <svg id="dart" viewBox="0 0 44 44" aria-hidden="true">
-                                <polygon points="1,1 11,5 5,11" fill="#383838"></polygon>
-                                <line x1="6" y1="6" x2="36" y2="36" stroke="#181818" stroke-width="3"></line>
-                                <polygon points="30,34 36,36 32,44" fill="#C0392B"></polygon>
-                                <polygon points="34,30 36,36 44,32" fill="#C0392B"></polygon>
-                            </svg>
+                            <div id="dart" aria-hidden="true">
+                                <svg viewBox="0 0 44 44" width="44" height="44">
+                                    <polygon points="1,1 11,5 5,11" fill="#383838"></polygon>
+                                    <line x1="6" y1="6" x2="36" y2="36" stroke="#181818" stroke-width="3"></line>
+                                    <polygon points="30,34 36,36 32,44" fill="#C0392B"></polygon>
+                                    <polygon points="34,30 36,36 44,32" fill="#C0392B"></polygon>
+                                </svg>
+                            </div>
                             <span id="dart-label"></span>
                         </div>
                         <div class="dart-controls">
