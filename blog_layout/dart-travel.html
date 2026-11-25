@@ -483,8 +483,12 @@
                         $label.text(place.city).css({ left: hitX + 14, top: hitY - 34 }).fadeIn(200);
                         $result.text(place.city + '(' + place.country + ')에 꽂혔어요. ' + place.reason);
 
+                        const recentText = place.city + ' (' + place.country + ')';
                         $('#recent-list .recent-empty').remove();
-                        $('<li>').text(place.city + ' (' + place.country + ')').prependTo('#recent-list');
+                        $('#recent-list li').filter(function () {
+                            return $(this).text() === recentText;
+                        }).remove();
+                        $('<li>').text(recentText).prependTo('#recent-list');
                         $('#recent-list li').slice(5).remove();
 
                         renderList();
